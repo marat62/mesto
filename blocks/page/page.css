@@ -1,5 +1,4 @@
 .page {
-    font-family: 'Inter', Arial, sans-serif;
     max-width: 880px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -13,3 +12,9 @@
         margin-right: 19px;
    }     
 }
+
+@media screen and (max-width:380px){
+    .page {
+        padding-top: 28px;
+    }
+}   

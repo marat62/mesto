@@ -12,7 +12,8 @@
 <body class="content">
     <div class="page">
         <header class="header">
-            <svg width="142" height="33" viewBox="0 0 142 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="142" height="33" viewBox="0 0 142 33" fill="none" class="header__logo"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M0 6.73727V32.6084H3.75838V13.8746H4.00127L11.7226 32.5705H14.8418L22.5631 13.8872H22.806V32.6084H26.5643V6.73727H21.7705L13.4356 26.848H13.1288L4.79385 6.73727H0Z"
                     fill="white" />
@@ -147,7 +148,23 @@
             </div>
         </section>
         <footer class="footer">© 2020 Mesto Russia</footer>
+
     </div>
+    <div class="popup">
+        <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input type="text" class="popup__input" value="Жак-Ив Кусто">
+            <input type="text" class="popup__input" value="Исследователь океана">
+            <button class="popup__button">Сохранить</button>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="popup__close" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 28.8L19.2 16L32 3.2L28.8 0L16 12.8L3.2 0L0 3.2L12.8 16L0 28.8L3.2 32L16 19.2L28.8 32L32 28.8Z" fill="white"/>
+                </svg>
+                
+        </div>
+
+
+    </div>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
