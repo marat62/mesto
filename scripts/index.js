@@ -23,5 +23,6 @@ function save(evt) {
 	title.textContent = nameInput.value;
 	subTitle.textContent = jobInput.value;
 }
+
 popupButton.addEventListener('click', save);
 popupButton.addEventListener('click', close);
