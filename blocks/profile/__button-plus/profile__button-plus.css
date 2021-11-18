@@ -11,10 +11,10 @@
 }
 
 .profile__button-plus:hover {
+    transition: 0.3s;
     opacity: 0.6;
     cursor: pointer;
 }
-
 
 @media screen and (max-width: 767px) {
     .profile__button-plus {
