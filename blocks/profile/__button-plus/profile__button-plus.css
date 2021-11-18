@@ -5,6 +5,9 @@
     background-color: transparent;
     box-sizing: border-box;
     border-radius: 2px;
+    background-image: url(../../../images/plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .profile__button-plus:hover {
@@ -18,5 +21,6 @@
         margin-top: 36px;
         width: 282px;
         height: 50px;
+        background-size: 16px;
     }
 }   

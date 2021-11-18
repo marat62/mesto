@@ -1,12 +1,11 @@
 .cards {
+    padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
     align-content: flex-end;
     gap: 20px 17px;
-    margin-top: 46px;
-    
-
+    margin-top: 46px; 
 }
 
 @media screen and (max-width: 929px) { 

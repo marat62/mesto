@@ -8,11 +8,13 @@ const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
 
 function open() {
-	popup.classList.add("popup__open");
+	popup.classList.add("popup_open");
+	nameInput.value = title.textContent;
+	jobInput.value = subTitle.textContent;
 }
 
 function close() {
-	popup.classList.remove("popup__open");
+	popup.classList.remove("popup_open");
 }
 
 profileButton.addEventListener("click", open);

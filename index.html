@@ -10,77 +10,75 @@
 </head>
 
 <body class="content">
-    <div class="page">
+    <div class="container">
         <header class="header">
             <img src="./images/logo.svg" class="header__logo" alt="логотип">
         </header>
+    </div>
+    <div class="page">
         <section class="profile">
             <img src="./images/avatar.jpg" class="profile__avatar" alt="аватар">
             <div class="profile__info">
                 <div class="profile__titles">
-                    <h2 class="profile__title">Жак-Ив Кусто</h2>
-                    <button class="profile__button">
-                        <img src="./images/edit.svg" alt="ред">
-                    </button>
+                    <p class="profile__title">Жак-Ив Кусто</p>
+                    <button type="button" class="profile__button"></button>
                 </div>
                 <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <button class="profile__button-plus">
-               <img src="./images/plus.svg" alt="плюс">
-            </button>
+            <button type="button" class="profile__button-plus"></button>
         </section>
-        <section class="cards">
-            <div class="card">
+        <ul class="cards">
+            <li class="card">
                 <img src="./images/karacaevsk.jpg" class="card__image" alt="карачаевск_храм">
                 <div class="card__title">
                     <span class="card__text">Карачаевск</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-            <div class="card">
+            </li>
+            <li class="card">
                 <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
                 <div class="card__title">
                     <span class="card__text">Гора Эльбрус</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-            <div class="card">
+            </li>
+            <li class="card">
                 <img src="./images/mountain.jpg" class="card__image" alt="домбай_горы">
                 <div class="card__title">
                     <span class="card__text">Домбай</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-            <div class="card">
+            </li>
+            <li class="card">
                 <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
                 <div class="card__title">
                     <span class="card__text">Гора Эльбрус</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-            <div class="card">
+            </li>
+            <li class="card">
                 <img src="./images/mountain.jpg" class="card__image" alt="домбай">
                 <div class="card__title">
                     <span class="card__text">Домбай</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-            <div class="card">
+            </li>
+            <li class="card">
                 <img src="./images/karacaevsk.jpg" class="card__image" alt="карачаевск_храм">
                 <div class="card__title">
                     <span class="card__text">Карачаево-Черкесия</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
-            </div>
-        </section>
+            </li>
+        </ul>
         <footer class="footer">© 2020 Mesto Russia</footer>
     </div>
     <form class="popup">
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" class="popup__input-name" value="Жак-Ив Кусто">
-            <input type="text" class="popup__input-job" value="Исследователь океана">
-            <button class="popup__button">Сохранить</button>
+            <input type="text" class="popup__input-name" name='name'>
+            <input type="text" class="popup__input-job" name="job">
+            <button class="popup__button" type="submit">Сохранить</button>
             <img src="./images/close_Icon.svg" class="popup__close" alt="закрыть">
         </div>
     </form>
