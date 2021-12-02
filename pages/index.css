@@ -29,3 +29,5 @@
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/_open/popup_open.css);  
 @import url(../blocks/popup/__place/popup__place.css);
+@import url(../blocks/card/__delete/card__delete.css);
+@import url(../blocks/card/__like/__like_active/card__like_active.css);

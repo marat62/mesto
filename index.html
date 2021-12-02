@@ -29,11 +29,12 @@
         </section>
         <ul class="cards">
             <li class="card">
-                <img src="./images/karacaevsk.jpg" class="card__image" alt="карачаевск_храм">
+                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="card__image" alt="карачаевск_храм">
                 <div class="card__title">
                     <span class="card__text">Карачаевск</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
             <li class="card">
                 <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
@@ -41,6 +42,7 @@
                     <span class="card__text">Гора Эльбрус</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
             <li class="card">
                 <img src="./images/mountain.jpg" class="card__image" alt="домбай_горы">
@@ -48,6 +50,7 @@
                     <span class="card__text">Домбай</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
             <li class="card">
                 <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
@@ -55,6 +58,7 @@
                     <span class="card__text">Гора Эльбрус</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
             <li class="card">
                 <img src="./images/mountain.jpg" class="card__image" alt="домбай">
@@ -62,6 +66,7 @@
                     <span class="card__text">Домбай</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
             <li class="card">
                 <img src="./images/karacaevsk.jpg" class="card__image" alt="карачаевск_храм">
@@ -69,6 +74,7 @@
                     <span class="card__text">Карачаево-Черкесия</span>
                     <img src="./images/like.svg" class="card__like" alt="лайк">
                 </div>
+                <button class="card__delete" type="button"></button>
             </li>
         </ul>
         <footer class="footer">© 2020 Mesto Russia</footer>
@@ -82,13 +88,13 @@
             <img src="./images/close_Icon.svg" class="popup__close" alt="закрыть">
         </form>
     </div>
-    <div class="popup__place" id="popup_place">
+    <div class="popup" id="popup_place">
         <form class="popup__content">
             <h2 class="popup__title">Новое место</h2>
             <input type="text" class="popup__input-name" name='place' placeholder="Название">
             <input type="text" class="popup__input-job" name="link" placeholder="Ссылка на картинку">
             <button class="popup__button" type="submit">Создать</button>
-            <img src="./images/close_Icon.svg" class="popup__close" alt="закрыть">
+            <img src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
         </form>
     </div>
     <script src="./scripts/index.js"></script>

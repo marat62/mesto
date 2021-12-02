@@ -6,8 +6,10 @@ const nameInput = document.querySelector(".popup__input-name");
 const jobInput = document.querySelector(".popup__input-job");
 const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
-const popupplace = document.querySelector(".popup__place");
+const popupplace = document.querySelector("#popup_place");
 const popupadd = document.querySelector(".profile__button-plus");
+const placeClose = document.querySelector("#place_close");
+const like = document.querySelector(".card__like");
 const initialCards = [
 	{
 	  name: 'Архыз',
@@ -41,7 +43,7 @@ function openPopup(popup) {
 
 }
 
-function close() {
+function closePopup(popup) {
 	popup.classList.remove("popup_open");
 }
 
@@ -52,8 +54,13 @@ function save(evt) {
 }
 
 
+  function activateLike(evt) {
+	const targetEl = evt.target;
+	targetEl.classList.add('.card__like_active');
+}
 
 profileButton.addEventListener("click", () => 	{nameInput.value = title.textContent;
 jobInput.value = subTitle.textContent; openPopup(popup)});
-popupCloseButton.addEventListener("click", close);
+popupCloseButton.addEventListener("click",() => closePopup(popup));
+placeClose.addEventListener("click",() => closePopup(popupplace));
 popupadd.addEventListener("click", () => {openPopup(popupplace)});
