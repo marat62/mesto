@@ -6,7 +6,7 @@ const nameInput = document.querySelector(".popup__input-name");
 const jobInput = document.querySelector(".popup__input-job");
 const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
-const popupplace = document.querySelector(".popup__place");
+const popupplace = document.getElementById("popup__place");
 const popupadd = document.querySelector(".profile__button-plus");
 const initialCards = [
 	{
@@ -51,8 +51,6 @@ function save(evt) {
 	title.textContent = nameInput.value;
 	subTitle.textContent = jobInput.value;
 }
-
-
 
 
 profileButton.addEventListener("click", () => open(popup));
