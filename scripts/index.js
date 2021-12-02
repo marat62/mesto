@@ -6,7 +6,7 @@ const nameInput = document.querySelector(".popup__input-name");
 const jobInput = document.querySelector(".popup__input-job");
 const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
-const popupplace = document.getElementById("popup__place");
+const popupplace = document.querySelector(".popup__place");
 const popupadd = document.querySelector(".profile__button-plus");
 const initialCards = [
 	{
@@ -36,10 +36,9 @@ const initialCards = [
   ];
 
 
-function open(popup) {
+function openPopup(popup) {
 	popup.classList.add("popup_open");
-	nameInput.value = title.textContent;
-	jobInput.value = subTitle.textContent;
+
 }
 
 function close() {
@@ -53,6 +52,8 @@ function save(evt) {
 }
 
 
-profileButton.addEventListener("click", () => open(popup));
+
+profileButton.addEventListener("click", () => 	{nameInput.value = title.textContent;
+jobInput.value = subTitle.textContent; openPopup(popup)});
 popupCloseButton.addEventListener("click", close);
-popupadd.addEventListener("click", () => open(popupplace));
+popupadd.addEventListener("click", () => {openPopup(popupplace)});
