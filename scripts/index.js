@@ -36,7 +36,7 @@ const initialCards = [
   ];
 
 
-function open() {
+function open(popup) {
 	popup.classList.add("popup_open");
 	nameInput.value = title.textContent;
 	jobInput.value = subTitle.textContent;
@@ -52,9 +52,9 @@ function save(evt) {
 	subTitle.textContent = jobInput.value;
 }
 
-function openPlace(evt) {
-	popupplace.classList.add("popup_open");
-}
-profileButton.addEventListener("click", open);
+// function openPlace() {
+// 	popupplace.classList.add("popup_open");
+// }
+profileButton.addEventListener("click", () => open(popup));
 popupCloseButton.addEventListener("click", close);
-popupadd.addEventListener("click", openPlace);
+popupadd.addEventListener("click", () => open(popupplace));
