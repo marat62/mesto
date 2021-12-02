@@ -12,30 +12,30 @@ const placeClose = document.querySelector("#place_close");
 const like = document.querySelector(".card__like");
 const initialCards = [
 	{
-	  name: 'Архыз',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+		name: 'Архыз',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
 	},
 	{
-	  name: 'Челябинская область',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+		name: 'Челябинская область',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
 	},
 	{
-	  name: 'Иваново',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+		name: 'Иваново',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
 	},
 	{
-	  name: 'Камчатка',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+		name: 'Камчатка',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
 	},
 	{
-	  name: 'Холмогорский район',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+		name: 'Холмогорский район',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
 	},
 	{
-	  name: 'Байкал',
-	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+		name: 'Байкал',
+		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 	}
-  ];
+];
 
 
 function openPopup(popup) {
@@ -54,13 +54,15 @@ function save(evt) {
 }
 
 
-  function activateLike(evt) {
+function activateLike(evt) {
 	const targetEl = evt.target;
 	targetEl.classList.add('.card__like_active');
 }
 
-profileButton.addEventListener("click", () => 	{nameInput.value = title.textContent;
-jobInput.value = subTitle.textContent; openPopup(popup)});
-popupCloseButton.addEventListener("click",() => closePopup(popup));
-placeClose.addEventListener("click",() => closePopup(popupplace));
-popupadd.addEventListener("click", () => {openPopup(popupplace)});
+profileButton.addEventListener("click", () => {
+	nameInput.value = title.textContent;
+	jobInput.value = subTitle.textContent; openPopup(popup)
+});
+popupCloseButton.addEventListener("click", () => closePopup(popup));
+placeClose.addEventListener("click", () => closePopup(popupplace));
+popupadd.addEventListener("click", () => { openPopup(popupplace) });
