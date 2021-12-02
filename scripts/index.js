@@ -7,7 +7,7 @@ const jobInput = document.querySelector(".popup__input-job");
 const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
 const popupplace = document.querySelector(".popup__place");
-const popupadd = document.querySelector(".profile__button-pluse");
+const popupadd = document.querySelector(".profile__button-plus");
 const initialCards = [
 	{
 	  name: 'Архыз',
@@ -52,9 +52,9 @@ function save(evt) {
 	subTitle.textContent = jobInput.value;
 }
 
-// function openPlace() {
-// 	popupplace.classList.add("popup_open");
-// }
+
+
+
 profileButton.addEventListener("click", () => open(popup));
 popupCloseButton.addEventListener("click", close);
 popupadd.addEventListener("click", () => open(popupplace));
