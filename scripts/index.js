@@ -46,10 +46,6 @@ function close() {
 	popup.classList.remove("popup_open");
 }
 
-
-
-
-
 function save(evt) {
 	evt.preventDefault();
 	title.textContent = nameInput.value;
