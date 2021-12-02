@@ -1,11 +1,40 @@
 const profileButton = document.querySelector(".profile__button");
 const popup = document.querySelector(".popup");
-const popupCloseButton = popup.querySelector(".popup__close");
+const popupCloseButton = document.querySelector(".popup__close");
 const popupButton = document.querySelector(".popup__button");
 const nameInput = document.querySelector(".popup__input-name");
 const jobInput = document.querySelector(".popup__input-job");
 const title = document.querySelector(".profile__title");
 const subTitle = document.querySelector(".profile__subtitle");
+const popupplace = document.querySelector(".popup__place");
+const popupadd = document.querySelector(".profile__button-pluse");
+const initialCards = [
+	{
+	  name: 'Архыз',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+	},
+	{
+	  name: 'Челябинская область',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+	},
+	{
+	  name: 'Иваново',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+	},
+	{
+	  name: 'Камчатка',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+	},
+	{
+	  name: 'Холмогорский район',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+	},
+	{
+	  name: 'Байкал',
+	  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+	}
+  ];
+
 
 function open() {
 	popup.classList.add("popup_open");
@@ -17,8 +46,9 @@ function close() {
 	popup.classList.remove("popup_open");
 }
 
-profileButton.addEventListener("click", open);
-popupCloseButton.addEventListener("click", close);
+
+
+
 
 function save(evt) {
 	evt.preventDefault();
@@ -26,5 +56,9 @@ function save(evt) {
 	subTitle.textContent = jobInput.value;
 }
 
-popupButton.addEventListener('click', save);
-popupButton.addEventListener('click', close);
+function openPlace(evt) {
+	popupplace.classList.add("popup_open");
+}
+profileButton.addEventListener("click", open);
+popupCloseButton.addEventListener("click", close);
+popupadd.addEventListener("click", openPlace);
