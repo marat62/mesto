@@ -49,7 +49,7 @@ function renderCard() {
 }
 
 function getItem(item) {
-	const newItem = cardTempl.Content.cloneNode(true);;
+	const newItem = cardTempl.Content.cloneNode(true);
 	const headerEl = newItem.querySelector(".card__text");
 	headerEl.Content = item.name;
 
@@ -88,3 +88,4 @@ profileButton.addEventListener("click", () => {
 popupCloseButton.addEventListener("click", () => closePopup(popup));
 placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => { openPopup(popupplace) });
+renderCard();
