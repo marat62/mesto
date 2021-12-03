@@ -49,7 +49,7 @@ function renderCard() {
 }
 
 function getItem(item) {
-	const newItem = cardTempl.content.cloneNode(true);;
+	const newItem = cardTempl.Content.cloneNode(true);;
 	const headerEl = newItem.querySelector(".card__text");
 	headerEl.Content = item.name;
 
