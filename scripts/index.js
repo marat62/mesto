@@ -11,7 +11,7 @@ const popupadd = document.querySelector(".profile__button-plus");
 const placeClose = document.querySelector("#place_close");
 const like = document.querySelector(".card__like");
 const cardsCont = document.querySelector(".cards");
-const cardTempl = document.querySelector(".template-card");
+const cardTempl = document.querySelector(".template");
 const initialCards = [
 	{
 		name: 'Архыз',
@@ -40,18 +40,23 @@ const initialCards = [
 ];
 
 
-function renderCards() {
-	const cardHtml = initialCards.map(addCard);
+function renderCard() {
+	const cardHtml = initialCards.map((item) => {
+		return getItem(item);
+	});
 	cardsCont.append(...cardHtml);
+
 }
 
-function addCard(item) {
-	const cardEl = cardTempl.querySelector(".card").cloneNode(true);
-	const cardImage = cardEl.querySelector('.card__image');
-	cardImage.setAttribute('src', item.link);
-	cardImage.setAttribute('alt', item.name);
-	return cardEl;
+function getItem(item) {
+	const newItem = cardTempl.content.cloneNode(true);;
+	const headerEl = newItem.querySelector(".card__text");
+	headerEl.Content = item.name;
+
+	return newItem;
 }
+
+
 function openPopup(popup) {
 	popup.classList.add("popup_open");
 
@@ -83,4 +88,3 @@ profileButton.addEventListener("click", () => {
 popupCloseButton.addEventListener("click", () => closePopup(popup));
 placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => { openPopup(popupplace) });
-renderCards();
