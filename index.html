@@ -28,54 +28,7 @@
             <button type="button" class="profile__button-plus"></button>
         </section>
         <ul class="cards">
-            <li class="card">
-                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="card__image" alt="карачаевск_храм">
-                <div class="card__title">
-                    <span class="card__text">Карачаевск</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
-            <li class="card">
-                <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
-                <div class="card__title">
-                    <span class="card__text">Гора Эльбрус</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
-            <li class="card">
-                <img src="./images/mountain.jpg" class="card__image" alt="домбай_горы">
-                <div class="card__title">
-                    <span class="card__text">Домбай</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
-            <li class="card">
-                <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
-                <div class="card__title">
-                    <span class="card__text">Гора Эльбрус</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
-            <li class="card">
-                <img src="./images/mountain.jpg" class="card__image" alt="домбай">
-                <div class="card__title">
-                    <span class="card__text">Домбай</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
-            <li class="card">
-                <img src="./images/karacaevsk.jpg" class="card__image" alt="карачаевск_храм">
-                <div class="card__title">
-                    <span class="card__text">Карачаево-Черкесия</span>
-                    <img src="./images/like.svg" class="card__like" alt="лайк">
-                </div>
-                <button class="card__delete" type="button"></button>
-            </li>
+
         </ul>
         <footer class="footer">© 2020 Mesto Russia</footer>
     </div>
@@ -98,6 +51,16 @@
         </form>
     </div>
     <script src="./scripts/index.js"></script>
+    <template class="template-card">
+        <li class="card">
+            <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
+            <div class="card__title">
+                <span class="card__text">Гора Эльбрус</span>
+                <img src="./images/like.svg" class="card__like" alt="лайк">
+            </div>
+            <button class="card__delete" type="button"></button>
+        </li>
+    </template>
 </body>
 
 </html>
