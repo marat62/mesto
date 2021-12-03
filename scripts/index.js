@@ -49,17 +49,17 @@ function renderCard() {
 }
 
 function getItem(item) {
-	const newItem = cardTempl.Content.cloneNode(true);
+	const newItem = cardTempl.content.cloneNode(true);
 	const headerEl = newItem.querySelector(".card__text");
-	headerEl.Content = item.name;
-
+	headerEl.textContent = item.name;
+	const cardImage = newItem.querySelector('.card__image');
+	cardImage.setAttribute('src', item.link);
+	cardImage.setAttribute('alt', item.name);
 	return newItem;
 }
 
-
 function openPopup(popup) {
 	popup.classList.add("popup_open");
-
 }
 
 function closePopup(popup) {
