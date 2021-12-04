@@ -89,16 +89,20 @@ profileButton.addEventListener("click", () => {
 });
 
 function handleAdd() {
+	evt.preventDefault();
 	const inpPlace = inputPlace.value;
 	const inpLink = inputName.value;
 	const card = getItem({
 		name: inpPlace,
 		link: inpLink,
+	
 	});
 	cardsCont.prepend(card);
+	inpPlace.value = '';
+	inpLink.value = '';
+
+
 }
-
-
 
 
 buttonCreate.addEventListener('click', () => handleAdd());
