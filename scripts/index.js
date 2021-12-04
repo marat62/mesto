@@ -15,8 +15,8 @@ const like = document.querySelector(".card__like");
 const cardsCont = document.querySelector(".cards");
 const cardTempl = document.querySelector(".template");
 const buttonCreate = document.querySelector("#button_create");
-const inputPlace = document.querySelector('input[name="place"]');
-const inputName = document.querySelector('input[name="link"]');
+const inputPlace = document.querySelector("#input-place");
+const inputName = document.querySelector("#input-link");
 const initialCards = [{
 	name: 'Архыз',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
