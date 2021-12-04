@@ -59,7 +59,7 @@ function getItem(item) {
 	cardImage.setAttribute('src', item.link);
 	cardImage.setAttribute('alt', item.name);
 	return newItem;
-	
+
 }
 
 function openPopup(popup) {
@@ -89,20 +89,20 @@ profileButton.addEventListener("click", () => {
 });
 
 function handleAdd() {
-	 
-	const item = {
-		name: inputPlace.value,
-		link: inputName.value
-	  };
-	const card = getItem(item);
+	const inpPlace = inputPlace.value
+	const inpLink = inputName.value
+	const card = getItem({
+		name: inpPlace,
+		link: inputName,
+	});
 	cardsCont.prepend(card);
 }
 
 
-  
 
-buttonCreate.addEventListener('click',handleAdd());
+
+buttonCreate.addEventListener('click', handleAdd());
 popupCloseButton.addEventListener("click", () => closePopup(popup));
 placeClose.addEventListener("click", () => closePopup(popupplace));
-popupadd.addEventListener("click", () => openPopup(popupplace) );
+popupadd.addEventListener("click", () => openPopup(popupplace));
 renderCard();
