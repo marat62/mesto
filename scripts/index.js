@@ -89,11 +89,11 @@ profileButton.addEventListener("click", () => {
 });
 
 function handleAdd() {
-	const inpPlace = inputPlace.value
-	const inpLink = inputName.value
+	const inpPlace = inputPlace.value;
+	const inpLink = inputName.value;
 	const card = getItem({
 		name: inpPlace,
-		link: inputName,
+		link: inpLink,
 	});
 	cardsCont.prepend(card);
 }
@@ -101,7 +101,7 @@ function handleAdd() {
 
 
 
-buttonCreate.addEventListener('click', handleAdd());
+buttonCreate.addEventListener('click', () => handleAdd());
 popupCloseButton.addEventListener("click", () => closePopup(popup));
 placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => openPopup(popupplace));
