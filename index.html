@@ -27,7 +27,7 @@
         <ul class="cards"> </ul>
         <footer class="footer">© 2020 Mesto Russia</footer>
     </div>
-    <div class="popup">
+    <div class="popup popup_type_profile">
         <form class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <input type="text" class="popup__input-name" name='name'>
@@ -36,16 +36,16 @@
                 class="popup__close" alt="закрыть">
         </form>
     </div>
-    <div class="popup" id="popup_place">
+    <div class="popup popup_type_place">
         <form class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <input type="text" class="popup__input-name" id="input-place" name='place' placeholder="Название">
-            <input type="text" class="popup__input-job" id="input-link" name="link" placeholder="Ссылка на картинку">
+            <input type="text" class="popup__input-name" id="input-place" name='place' placeholder="Название" required>
+            <input type="text" class="popup__input-job" id="input-link" name="link" placeholder="Ссылка на картинку" required>
             <button class="popup__button" id="button_create" type="submit">Создать</button> <img
                 src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
         </form>
     </div>
-    <div class="popup" id="popup_img">
+    <div class="popup popup_type_img">
         <form class="popup__photo"> <img
                 src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="popup__image"
                 alt="закрыть">
