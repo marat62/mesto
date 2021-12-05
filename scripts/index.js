@@ -51,8 +51,10 @@ function getItem(item) {
 	const cardImage = newItem.querySelector(".card__image");
 	cardImage.setAttribute("src", item.link);
 	cardImage.setAttribute("alt", item.name);
+
 	const buttonDel = newItem.querySelector(".card__delete");
 	buttonDel.addEventListener("click", handleDelete);
+	
 	const heart = newItem.querySelector(".card__like");
 	heart.addEventListener("click", () => heart.classList.add("card__like_active"));
 	cardImage.addEventListener("click", () => {
@@ -63,10 +65,6 @@ function getItem(item) {
 		photoTitle.textContent = headerEl.textContent;
 	});
 	return newItem;
-}
-
-function likeHeart() {
-	heart.classList.add("card__like_active");
 }
 
 function openPopup(popup) {
