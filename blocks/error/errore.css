@@ -9,3 +9,10 @@
 .error:last-of-type {
     margin: 0 0 31px 0;
 }
+
+@media screen and (max-width:399px) {
+    .error {
+        width: 238px; 
+    }
+    
+}
