@@ -30,8 +30,10 @@
     <div class="popup popup_type_profile">
         <form class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" class="popup__input-name" name='name'>
-            <input type="text" class="popup__input-job" name="job">
+            <input type="text" id="input-name" class="popup__input popup__input-name" name='name' minlength="2" maxlength="40" required >
+            <span id="user-name-error" class="error"></span>
+            <input type="text" id="input-about" class="popup__input popup__input-job" name="job" minlength="2" maxlength="200" required> 
+            <span id="about-error" class="error"></span>
             <button class="popup__button" type="submit">Сохранить</button> <img src="./images/close_Icon.svg"
                 class="popup__close" alt="закрыть">
         </form>
@@ -39,8 +41,10 @@
     <div class="popup popup_type_place">
         <form class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <input type="text" class="popup__input-name" id="input-place" name='place' placeholder="Название" required>
-            <input type="text" class="popup__input-job" id="input-link" name="link" placeholder="Ссылка на картинку" required>
+            <input type="text" class="popup__input popup__input-name" id="input-place" name='place' minlength="2" maxlength="40"  placeholder="Название" required>
+            <span id="name-card-error" class="error"></span>
+            <input type="url" class="popup__input popup__input-job" id="input-link" name="link" placeholder="Ссылка на картинку" required>
+            <span id="link-error" class="error"></span>
             <button class="popup__button" id="button_create" type="submit">Создать</button> <img
                 src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
         </form>
@@ -61,6 +65,7 @@
         </li>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>
