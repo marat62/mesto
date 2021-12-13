@@ -19,6 +19,9 @@ const inputPlace = document.querySelector("#input-place");
 const inputName = document.querySelector("#input-link");
 const photoBig = popupimg.querySelector(".popup__image");
 const photoTitle = popupimg.querySelector(".popup__photo-name");
+const overlayProfile = document.querySelector("#overlay-profile");
+const overlayPlace = document.querySelector("#overlay-place");
+const overlayImg = document.querySelector("#overlay-img");
 const initialCards = [{
 	name: 'Архыз',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -67,13 +70,22 @@ function getItem(item) {
 	});
 	return newItem;
 }
+function closePopupEsc(evt) {
+    if(evt.key === "Escape") {
+        const popupopen = document.querySelector(".popup_open"); 
+        closePopup(popupopen);                                      
+    }
+}
 
 function openPopup(popupProfile) {
 	popupProfile.classList.add("popup_open");
+	document.addEventListener('keydown', closePopupEsc);
 }
 
 function closePopup(popupProfile) {
 	popupProfile.classList.remove("popup_open");
+	document.removeEventListener('keydown', closePopupEsc);
+	
 }
 
 function handleEditProfile(evt) {
@@ -107,10 +119,15 @@ function handleDeleteCard(event) {
 	const lastItem = targetEl.closest(".card");
 	lastItem.remove();
 }
+
+
 popupplace.addEventListener("submit", handleAdd);
 popupProfile.addEventListener("submit", handleEditProfile);
 profileCloseButton.addEventListener("click", () => closePopup(popupProfile));
 placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => openPopup(popupplace));
 popupImgClose.addEventListener("click", () => closePopup(popupimg))
+overlayProfile.addEventListener("click",() => closePopup(popupProfile))
+overlayPlace.addEventListener("click",() => closePopup(popupplace))
+overlayImg.addEventListener("click",() => closePopup(popupimg))
 renderCard();

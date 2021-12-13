@@ -28,34 +28,44 @@
         <footer class="footer">© 2020 Mesto Russia</footer>
     </div>
     <div class="popup popup_type_profile">
-        <form class="popup__content">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" id="input-name" class="popup__input popup__input-name" name='name' minlength="2" maxlength="40" required >
-            <span id="input-name-error" class="error"></span>
-            <input type="text" id="input-about" class="popup__input popup__input-job" name="job" minlength="2" maxlength="200" required> 
-            <span id="input-about-error" class="error"></span>
-            <button class="popup__button " type="submit">Сохранить</button> <img src="./images/close_Icon.svg"
-                class="popup__close" alt="закрыть">
-        </form>
+        <div class="overlay" id="overlay-profile">
+            <form class="popup__content">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" id="input-name" class="popup__input popup__input-name" name='name' minlength="2"
+                    maxlength="40" required>
+                <span id="input-name-error" class="error"></span>
+                <input type="text" id="input-about" class="popup__input popup__input-job" name="job" minlength="2"
+                    maxlength="200" required>
+                <span id="input-about-error" class="error"></span>
+                <button class="popup__button " type="submit">Сохранить</button> <img src="./images/close_Icon.svg"
+                    class="popup__close" alt="закрыть">
+            </form>
+        </div>
     </div>
     <div class="popup popup_type_place">
-        <form class="popup__content">
-            <h2 class="popup__title">Новое место</h2>
-            <input type="text" class="popup__input popup__input-name" id="input-place" name='place' minlength="2" maxlength="40"  placeholder="Название" required>
-            <span id="input-place-error" class="error"></span>
-            <input type="url" class="popup__input popup__input-job" id="input-link" name="link" placeholder="Ссылка на картинку" required>
-            <span id="input-link-error" class="error"></span>
-            <button class="popup__button popup__button_disabled" id="button_create" type="submit">Создать</button> <img
-                src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
-        </form>
+        <div class="overlay" id="overlay-place">
+            <form class="popup__content">
+                <h2 class="popup__title">Новое место</h2>
+                <input type="text" class="popup__input popup__input-name" id="input-place" name='place' minlength="2"
+                    maxlength="40" placeholder="Название" required>
+                <span id="input-place-error" class="error"></span>
+                <input type="url" class="popup__input popup__input-job" id="input-link" name="link"
+                    placeholder="Ссылка на картинку" required>
+                <span id="input-link-error" class="error"></span>
+                <button class="popup__button popup__button_disabled" id="button_create" type="submit">Создать</button>
+                <img src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
+            </form>
+        </div>
     </div>
     <div class="popup popup_type_img">
+        <div class="overlay" id="overlay-img">
         <form class="popup__photo"> <img
                 src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="popup__image"
                 alt="закрыть">
             <h2 class="popup__photo-name"></h2> <img src="./images/close_Icon.svg" class="popup__close" id="img_close"
                 alt="закрыть">
         </form>
+    </div>
     </div>
     <template class="template">
         <li class="card"> <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
