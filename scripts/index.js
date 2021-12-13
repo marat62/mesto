@@ -59,7 +59,7 @@ function getItem(item) {
 
 	const buttonDel = newItem.querySelector(".card__delete");
 	buttonDel.addEventListener("click", handleDeleteCard);
-	
+
 	const heart = newItem.querySelector(".card__like");
 	heart.addEventListener("click", () => heart.classList.toggle("card__like_active"));
 	cardImage.addEventListener("click", () => {
@@ -71,10 +71,10 @@ function getItem(item) {
 	return newItem;
 }
 function closePopupEsc(evt) {
-    if(evt.key === "Escape") {
-        const popupopen = document.querySelector(".popup_open"); 
-        closePopup(popupopen);                                      
-    }
+	if (evt.key === "Escape") {
+		const popupopen = document.querySelector(".popup_open");
+		closePopup(popupopen);
+	}
 }
 
 function openPopup(popupProfile) {
@@ -85,7 +85,7 @@ function openPopup(popupProfile) {
 function closePopup(popupProfile) {
 	popupProfile.classList.remove("popup_open");
 	document.removeEventListener('keydown', closePopupEsc);
-	
+
 }
 
 function handleEditProfile(evt) {
@@ -127,7 +127,7 @@ profileCloseButton.addEventListener("click", () => closePopup(popupProfile));
 placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => openPopup(popupplace));
 popupImgClose.addEventListener("click", () => closePopup(popupimg))
-overlayProfile.addEventListener("click",() => closePopup(popupProfile))
-overlayPlace.addEventListener("click",() => closePopup(popupplace))
-overlayImg.addEventListener("click",() => closePopup(popupimg))
+overlayProfile.addEventListener("click", () => closePopup(popupProfile))
+overlayPlace.addEventListener("click", () => closePopup(popupplace))
+overlayImg.addEventListener("click", () => closePopup(popupimg))
 renderCard();
