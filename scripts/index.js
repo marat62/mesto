@@ -111,6 +111,8 @@ function handleAdd(evt) {
 	cardsCont.prepend(card);
 	inputPlace.value = '';
 	inputName.value = '';
+	buttonCreate.classList.add('popup__button_disabled');
+    buttonCreate.disabled = true;
 	closePopup(popupplace);
 }
 
@@ -120,13 +122,25 @@ function handleDeleteCard(event) {
 	lastItem.remove();
 }
 
+const popups = document.querySelectorAll('.popup')
+
+popups.forEach((popup) => {
+	popup.addEventListener('click', (evt) => {
+		if (evt.target.classList.contains('popup_open')) {
+			closePopup(popup)
+		}
+		if (evt.target.classList.contains('popup__close')) {
+		  closePopup(popup)
+		}
+	})
+})
+
+
 
 popupplace.addEventListener("submit", handleAdd);
 popupProfile.addEventListener("submit", handleEditProfile);
 profileCloseButton.addEventListener("click", () => closePopup(popupProfile));
-placeClose.addEventListener("click", () => closePopup(popupplace));
 popupadd.addEventListener("click", () => openPopup(popupplace));
-popupImgClose.addEventListener("click", () => closePopup(popupimg))
 overlayProfile.addEventListener("click", () => closePopup(popupProfile))
 overlayPlace.addEventListener("click", () => closePopup(popupplace))
 overlayImg.addEventListener("click", () => closePopup(popupimg))
