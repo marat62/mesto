@@ -19,9 +19,6 @@ const inputPlace = document.querySelector("#input-place");
 const inputName = document.querySelector("#input-link");
 const photoBig = popupimg.querySelector(".popup__image");
 const photoTitle = popupimg.querySelector(".popup__photo-name");
-const overlayProfile = document.querySelector("#overlay-profile");
-const overlayPlace = document.querySelector("#overlay-place");
-const overlayImg = document.querySelector("#overlay-img");
 const initialCards = [{
 	name: 'Архыз',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -135,13 +132,7 @@ popups.forEach((popup) => {
 	})
 })
 
-
-
 popupplace.addEventListener("submit", handleAdd);
 popupProfile.addEventListener("submit", handleEditProfile);
-profileCloseButton.addEventListener("click", () => closePopup(popupProfile));
 popupadd.addEventListener("click", () => openPopup(popupplace));
-overlayProfile.addEventListener("click", () => closePopup(popupProfile))
-overlayPlace.addEventListener("click", () => closePopup(popupplace))
-overlayImg.addEventListener("click", () => closePopup(popupimg))
 renderCard();
