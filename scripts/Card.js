@@ -1,7 +1,7 @@
 export default class Card {
-    constructor(selector, title, link, alt) {
+    constructor(selector, name, link, alt) {
         this._selector = selector;
-        this._title = title;
+        this._name = name;
         this._link = link;
         this._alt = alt;
     }
@@ -11,6 +11,7 @@ export default class Card {
             .content
             .querySelector('.card')
             .cloneNode(true);
+            
     }
 
     _deleteCardButton = () => {
@@ -22,12 +23,14 @@ export default class Card {
     }
 
     _openBigSize = () => {
-        const popupImg = querySelector(".popup_type_img");
+        const popupImg = document.querySelector(".popup_type_img");
         popupImg.classList.add('popup_open');
-        popupImg.querySelector('.popup__photo-name').textContent = this._title; 
+        popupImg.querySelector('.popup__photo-name').textContent = this._name; 
         popupImg.querySelector('.popup__image').src = this._link; 
         popupImg.querySelector(".popup__image").alt = this._alt; 
     }
+
+
 
     getView() {
         this._element = this._getItem();
@@ -41,11 +44,10 @@ export default class Card {
        
         this._element.querySelector('.card__like').addEventListener('click', this._likeButton);
 
+        this._element.querySelector('.card__image').addEventListener('click', this._openBigSize);
        
-        this._element.addEventListener('click', this._openBigSize);
+        this._element.querySelector('.card__image').addEventListener('click', this._openBigSize);
 
         return this._element
-    }
-
-
+    };
 }

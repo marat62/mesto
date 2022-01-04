@@ -63,5 +63,3 @@ enableValidation({
   errorClass: 'popup__error_visible'
 });
 
-
-export default FormValidator;
