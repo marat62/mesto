@@ -4,6 +4,8 @@ export default class Card {
         this._name = name;
         this._link = link;
         this._alt = alt;
+        
+       
     }
     _getItem() { 
         return document
@@ -18,6 +20,8 @@ export default class Card {
         this._element.remove();
     }
 
+
+
     _likeButton = () => {
         this._element.querySelector('.card__like').classList.toggle('card__like_active')
     }
@@ -31,22 +35,15 @@ export default class Card {
     }
 
 
-
     getView() {
         this._element = this._getItem();
         this._element.querySelector('.card__text').textContent = this._name; 
         this._element.querySelector('.card__image').src = this._link; 
         this._element.querySelector('.card__image').alt = this._alt; 
-
-      
         this._element.querySelector('.card__delete').addEventListener('click', this._deleteCardButton);
-
-       
         this._element.querySelector('.card__like').addEventListener('click', this._likeButton);
-
         this._element.querySelector('.card__image').addEventListener('click', this._openBigSize);
-       
-        this._element.querySelector('.card__image').addEventListener('click', this._openBigSize);
+        
 
         return this._element
     };

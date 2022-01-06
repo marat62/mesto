@@ -21,6 +21,7 @@ const inputPlace = document.querySelector("#input-place");
 const inputName = document.querySelector("#input-link");
 const photoBig = popupimg.querySelector(".popup__image");
 const photoTitle = popupimg.querySelector(".popup__photo-name");
+const cardImage = document.querySelector(".card__image");
 const initialCards = [{
 	name: 'Архыз',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -55,25 +56,6 @@ function renderCard() {
 
 renderCard();
 
-function getItem(item) {
-	const newItem = cardTempl.content.cloneNode(true);
-	const headerEl = newItem.querySelector(".card__text");
-	headerEl.textContent = item.name;
-	const cardImage = newItem.querySelector(".card__image");
-	cardImage.setAttribute("src", item.link);
-	cardImage.setAttribute("alt", item.name);
-
-	const heart = newItem.querySelector(".card__like");
-	heart.addEventListener("click", () => heart.classList.toggle("card__like_active"));
-	cardImage.addEventListener("click", () => {
-		openPopup(popupimg);
-		photoBig.src = cardImage.src;
-		photoBig.alt = headerEl.textContent;
-		photoTitle.textContent = headerEl.textContent;
-	});
-	return newItem;
-}
-
 function closePopupEsc(evt) {
 	if (evt.key === "Escape") {
 		const popupopen = document.querySelector(".popup_open");
@@ -91,6 +73,7 @@ function closePopup(popupProfile) {
 	document.removeEventListener('keydown', closePopupEsc);
 
 }
+
 
 function handleEditProfile(evt) {
 	evt.preventDefault();
