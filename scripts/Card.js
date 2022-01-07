@@ -25,14 +25,23 @@ export default class Card {
     _likeButton = () => {
         this._element.querySelector('.card__like').classList.toggle('card__like_active')
     }
-
-    _openBigSize = () => {
-        const popupImg = document.querySelector(".popup_type_img");
-        popupImg.classList.add('popup_open');
-        popupImg.querySelector('.popup__photo-name').textContent = this._name; 
-        popupImg.querySelector('.popup__image').src = this._link; 
-        popupImg.querySelector(".popup__image").alt = this._alt; 
-    }
+    
+        _openBigSize() {
+            photoBig.src = this._link;
+            photoBig.alt = `Изображение ${this._link}`;
+            photoTitle.textContent = this._name;
+        
+            openPopup(popupimg);
+         }
+    
+    // _openBigSize = () => {
+    //     const popupImg = document.querySelector(".popup_type_img");
+    //     popupImg.classList.add('popup_open');
+    //     popupImg.querySelector('.popup__photo-name').textContent = this._name; 
+    //     popupImg.querySelector('.popup__image').src = this._link; 
+    //     popupImg.querySelector(".popup__image").alt = this._alt; 
+    //     openPopup(popupImg);
+    // }
 
 
     getView() {
