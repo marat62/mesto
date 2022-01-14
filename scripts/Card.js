@@ -1,3 +1,4 @@
+import {openPopup} from "./index.js";
 export default class Card {
 	constructor(selector, name, link, alt) {
 		this._selector = selector;
@@ -16,22 +17,11 @@ export default class Card {
 	}
 	_openBigPicture = () => {
 		const popupImg = document.querySelector(".popup_type_img");
-		popupImg.classList.add('popup_open');
+		openPopup(popupImg);
 		popupImg.querySelector('.popup__photo-name').textContent = this._name;
 		popupImg.querySelector('.popup__image').src = this._link;
 		popupImg.querySelector(".popup__image").alt = this._alt;
 		document.addEventListener('keydown', this._closePopupByEscape);
-	}
-	_closeBigPicture = () => {
-		const popupImg = document.querySelector(".popup_type_img");
-		popupImg.classList.remove('popup_open');
-		document.removeEventListener('keydown', this._closePopupByEscape); // удаляем слушателя для esc
-	}
-	_closePopupByEscape = (evt) => {
-		if(evt.key === 'Escape') {
-			const openPopup = document.querySelector('.popup_open');
-			this._closeBigPicture();
-		}
 	}
 	getView() {
 		this._element = this._getItem();

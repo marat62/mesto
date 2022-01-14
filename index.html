@@ -31,10 +31,10 @@
         <form class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <input type="text" id="input-name" class="popup__input popup__input-name" name='name' minlength="2"
-                maxlength="40" required>
+                maxlength="40" placeholder="Имя" required>
             <span id="input-name-error" class="error"></span>
             <input type="text" id="input-about" class="popup__input popup__input-job" name="job" minlength="2"
-                maxlength="200" required>
+                maxlength="200" placeholder="Профессиональная деятельность" required>
             <span id="input-about-error" class="error"></span>
             <button class="popup__button " type="submit">Сохранить</button> <img src="./images/close_Icon.svg"
                 class="popup__close" alt="закрыть">
@@ -71,7 +71,6 @@
         </li>
     </template>
     <script src="./scripts/index.js" type="module"></script>
-    <script src="./scripts/FormValidator.js" type="module"></script>
 </body>
 
 </html>

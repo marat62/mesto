@@ -1,5 +1,6 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
+export {openPopup};
 const profileButton = document.querySelector(".profile__button");
 const popupProfile = document.querySelector(".popup_type_profile");
 const nameInput = document.querySelector(".popup__input-name");
@@ -64,6 +65,8 @@ function openPopup(popupProfile) {
 	popupProfile.classList.add("popup_open");
 	document.addEventListener('keydown', closePopupEsc);
 }
+
+
 
 function closePopup(popupProfile) {
 	popupProfile.classList.remove("popup_open");
