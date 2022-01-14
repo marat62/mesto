@@ -1,4 +1,4 @@
-import {openPopup} from "./index.js";
+import { openPopup } from "./index.js";
 export default class Card {
 	constructor(selector, name, link, alt) {
 		this._selector = selector;
@@ -21,16 +21,18 @@ export default class Card {
 		popupImg.querySelector('.popup__photo-name').textContent = this._name;
 		popupImg.querySelector('.popup__image').src = this._link;
 		popupImg.querySelector(".popup__image").alt = this._alt;
-		document.addEventListener('keydown', this._closePopupByEscape);
 	}
 	getView() {
 		this._element = this._getItem();
 		this._element.querySelector('.card__text').textContent = this._name;
 		this._element.querySelector('.card__image').src = this._link;
 		this._element.querySelector('.card__image').alt = this._alt;
+		this._setEventListeners();
+		return this._element
+	}
+	_setEventListeners() {
 		this._element.querySelector('.card__delete').addEventListener('click', this._deleteCardButton);
 		this._element.querySelector('.card__like').addEventListener('click', this._likeButton);
 		this._element.querySelector('.card__image').addEventListener('click', this._openBigPicture);
-		return this._element
 	}
 }

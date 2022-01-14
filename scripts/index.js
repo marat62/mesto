@@ -31,14 +31,14 @@ const initialCards = [{
 	name: 'Байкал',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 }];
-const enableValidation = ({
+const enableValidation = {
 	formSelector: '.popup__content',
 	inputSelector: '.popup__input',
 	submitButtonSelector: '.popup__button',
 	inactiveButtonClass: 'popup__button_disabled',
 	inputErrorClass: 'popup__input_type_error',
 	errorClass: 'popup__error_visible'
-});
+};
 const formProfileValidator = new FormValidator(enableValidation, popupProfile);
 const formPlaceValidator = new FormValidator(enableValidation, popupplace);
 formProfileValidator.enableValidation();
@@ -85,15 +85,14 @@ profileButton.addEventListener("click", () => {
 	jobInput.value = subTitle.textContent;
 });
 
-function handleAdd(evt) {
+function handleAddCard(evt) {
 	evt.preventDefault();
 	const inpPlace = inputPlace.value;
 	const inpLink = inputName.value;
 	const cardItem = new Card('.template', inpPlace, inpLink, evt.alt);
 	const card = cardItem.getView();
 	elements.prepend(card);
-	inputPlace.value = '';
-	inputName.value = '';
+	evt.target.reset();
 	buttonCreate.classList.add('popup__button_disabled');
 	buttonCreate.disabled = true;
 	closePopup(popupplace);
@@ -101,14 +100,11 @@ function handleAdd(evt) {
 const popups = document.querySelectorAll('.popup')
 popups.forEach((popup) => {
 	popup.addEventListener('click', (evt) => {
-		if(evt.target.classList.contains('popup_open')) {
-			closePopup(popup)
-		}
-		if(evt.target.classList.contains('popup__close')) {
+		if(evt.target.classList.contains('popup_open') || evt.target.classList.contains('popup__close') ) {
 			closePopup(popup)
 		}
 	})
 })
-popupplace.addEventListener("submit", handleAdd);
+popupplace.addEventListener("submit", handleAddCard);
 popupProfile.addEventListener("submit", handleEditProfile);
 popupadd.addEventListener("click", () => openPopup(popupplace));
