@@ -17,10 +17,12 @@ import {
 	popupimage,
 	popupform,
 	profileClose,
-	profileadd,
 	popupadd,
 	imgclose,
-	enableValidation
+	enableValidation,
+	imageInput,
+    placeInput,
+	popupclose
 
   } from '../utils/constants.js';
 
@@ -138,7 +140,7 @@ const userInfo = new UserInfo({
   
   popupform.addEventListener('submit', handleProfileFormSubmit);
   profileClose.addEventListener('click', () => popupWithProfileForm.close());
-
+  popupclose.addEventListener('click', () => popupWithProfileForm.close());
   
   // Слушатели формы добавления карточки
   popupadd.addEventListener('click', () => {

@@ -5,12 +5,13 @@ export class Popup {
   
     open() {
       this._selector.classList.add('popup_open');
-      this.setEventListener();
+      document.addEventListener('keydown', this._handleEscClose);
     }
   
     close() {
       this._selector.classList.remove('popup_open');
-      this.removeEventListener();
+      document.removeEventListener('keydown', this._handleEscClose);
+      
     }
   
     _handleEscClose = (evt) => {
@@ -18,13 +19,15 @@ export class Popup {
         this.close();
       }
     }
-  
+   
     setEventListener() {
       document.addEventListener('keydown', this._handleEscClose);
+      
+     
     }
   
     removeEventListener() {
       document.removeEventListener('keydown', this._handleEscClose);
     }
   };
-  
+

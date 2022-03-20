@@ -17,6 +17,9 @@ const profileClose = document.querySelector('#place_close');
 const popupimage = document.querySelector('.popup__image');
 const profileadd = document.querySelector(".popup__button")
 const imgclose = document.querySelector("#img_close")
+const placeInput = document.querySelector("#input-place");
+const imageInput = document.querySelector("#input-link");
+const popupclose = document.querySelector(".popup__close");
 const enableValidation = {
 	formSelector: '.popup__content',
 	inputSelector: '.popup__input',
@@ -44,6 +47,9 @@ export {
     profileClose,
     profileadd,
     imgclose,
-    enableValidation
+    enableValidation,
+    imageInput,
+    placeInput,
+    popupclose
 
 };
