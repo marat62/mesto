@@ -49,6 +49,7 @@ export {
     enableValidation,
     imageInput,
     placeInput,
-    popupclose
+    popupclose,
+    
 
 };

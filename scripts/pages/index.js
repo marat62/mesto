@@ -22,7 +22,8 @@ import {
 	enableValidation,
 	imageInput,
     placeInput,
-	popupclose
+	popupclose,
+	
 
   } from '../utils/constants.js';
 
@@ -47,14 +48,6 @@ const initialCards = [{
 	name: 'Байкал',
 	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
 }];
-// const enableValidation = {
-// 	formSelector: '.popup__content',
-// 	inputSelector: '.popup__input',
-// 	submitButtonSelector: '.popup__button',
-// 	inactiveButtonClass: 'popup__button_disabled',
-// 	inputErrorClass: 'popup__input_type_error',
-// 	errorClass: 'popup__error_visible'
-// };
 
 // Обработчик сабмита формы добавления места
 const handlePlaceFormSubmit = () => {
@@ -139,8 +132,7 @@ const userInfo = new UserInfo({
   });
   
   popupform.addEventListener('submit', handleProfileFormSubmit);
-//   profileClose.addEventListener('click', () => popupWithProfileForm.close());
-  popupclose.addEventListener('click', () => popupWithProfileForm.close());
+
   
   // Слушатели формы добавления карточки
   popupadd.addEventListener('click', () => {
@@ -149,13 +141,7 @@ const userInfo = new UserInfo({
   });
   
   formplace.addEventListener('submit', handlePlaceFormSubmit);
-  profileClose.addEventListener('click', () => popupWithPlaceForm.close());
 
-  
-  // Слушатели попапа с картинкой
-  imgclose.addEventListener('click', () => popupWithImage.close());
-
-
-
-
-
+  popupWithPlaceForm.setEventListener()
+  popupWithProfileForm.setEventListener()
+  popupWithImage.setEventListener()

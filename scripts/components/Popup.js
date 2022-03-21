@@ -24,7 +24,7 @@ export class Popup {
    
     setEventListener() {
       document.addEventListener('keydown', this._handleEscClose);
-      this._selector.addEventListener('click', (evt) => {
+      document.addEventListener('click', (evt) => {
         if (evt.target.classList.contains('popup__overlay')) {
           this.close();
         }
