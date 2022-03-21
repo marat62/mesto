@@ -25,7 +25,7 @@ export class Popup {
     setEventListener() {
       document.addEventListener('keydown', this._handleEscClose);
       this._selector.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup')) {
+        if (evt.target.classList.contains('popup__overlay')) {
           this.close();
         }
         if (evt.target.classList.contains('popup__close')) {
@@ -37,8 +37,8 @@ export class Popup {
      
     }
   
-    removeEventListener() {
-      document.removeEventListener('keydown', this._handleEscClose);
-    }
+  //   removeEventListener() {
+  //     document.removeEventListener('keydown', this._handleEscClose);
+  //   }
   };
 

@@ -139,7 +139,7 @@ const userInfo = new UserInfo({
   });
   
   popupform.addEventListener('submit', handleProfileFormSubmit);
-  profileClose.addEventListener('click', () => popupWithProfileForm.close());
+//   profileClose.addEventListener('click', () => popupWithProfileForm.close());
   popupclose.addEventListener('click', () => popupWithProfileForm.close());
   
   // Слушатели формы добавления карточки
