@@ -155,9 +155,6 @@ const userInfo = new UserInfo({
   // Слушатели попапа с картинкой
   imgclose.addEventListener('click', () => popupWithImage.close());
 
-  
-
-
 
 
 
