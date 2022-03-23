@@ -25,31 +25,13 @@ import {
 	imageInput,
     placeInput,
 	popupclose,
+	initialCards
 	
 
   } from '../utils/constants.js';
 
 
 
-const initialCards = [{
-	name: 'Архыз',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, {
-	name: 'Челябинская область',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-}, {
-	name: 'Иваново',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-}, {
-	name: 'Камчатка',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-}, {
-	name: 'Холмогорский район',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-}, {
-	name: 'Байкал',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}];
 
 // Обработчик сабмита формы добавления места
 const handlePlaceFormSubmit = () => {
@@ -68,7 +50,6 @@ const handlePlaceFormSubmit = () => {
   
 	addCard.renderItems();
 	addCardFormValidator.deactivateButton();
-	formplace.reset();
 	popupWithPlaceForm.close();
 	popupWithPlaceForm.removeEventListener();
   };
@@ -76,8 +57,8 @@ const handlePlaceFormSubmit = () => {
 
 // Обработчик формы редактирования профиля
 const userInfo = new UserInfo({
-	profileTitleSelector: title,
-	profilesubTitleSelector: subTitle
+	profileTitle: title,
+	profilesubTitle: subTitle
   });
   
   const handleProfileFormSubmit = () => {
@@ -100,12 +81,11 @@ const userInfo = new UserInfo({
   const renderCard = (item) => {
 	const newCard = new Card({
 	  data: item,
-	  selector: '.template',
+	  popupSelector: '.template',
 	  handleCardClick: () => popupWithImage.open(item)
 	});
 	const initialCard = newCard.generate();
 	return initialCard;
-	cardList.addItem(initialCard);
   };
   
   const cardList = new Section({
@@ -132,18 +112,14 @@ const userInfo = new UserInfo({
 	editProfileFormValidator.resetErrors();
 	popupWithProfileForm.open();
   });
-  
-  popupform.addEventListener('submit', handleProfileFormSubmit);
-
-  
+    
   // Слушатели формы добавления карточки
   popupadd.addEventListener('click', () => {
 	addCardFormValidator.resetErrors();
 	popupWithPlaceForm.open();
+	addCardFormValidator.deactivateButton();
   });
   
-  formplace.addEventListener('submit', handlePlaceFormSubmit);
-
   popupWithPlaceForm.setEventListener()
   popupWithProfileForm.setEventListener()
   popupWithImage.setEventListener()

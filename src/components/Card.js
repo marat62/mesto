@@ -1,9 +1,9 @@
 export class Card {
-	constructor({ data, selector, handleCardClick }) {
+	constructor({ data, popupSelector, handleCardClick }) {
 	  this._link = data.link;
 	  this._alt = data.alt;
 	  this._name = data.name;
-	  this._selector = selector;
+	  this._selector = popupSelector;
 	  this._handleCardClick = handleCardClick;
 	}
   
