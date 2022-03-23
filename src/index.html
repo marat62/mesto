@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="content">
     <div class="container">
-        <header class="header"> <img src="./images/logo.svg" class="header__logo" alt="логотип"> </header>
+        <header class="header"> <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="логотип"> </header>
     </div>
     <div class="page">
-        <section class="profile"> <img src="./images/avatar.jpg" class="profile__avatar" alt="аватар">
+        <section class="profile"> <img src="<%=require('./images/avatar.jpg')%>" class="profile__avatar" alt="аватар">
             <div class="profile__info">
                 <div class="profile__titles">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -37,7 +36,7 @@
             <input type="text" id="input-about" class="popup__input popup__input-job" name="job" minlength="2"
                 maxlength="200" placeholder="Профессиональная деятельность" required>
             <span id="input-about-error" class="error"></span>
-            <button class="popup__button " type="submit">Сохранить</button> <img src="./images/close_Icon.svg"
+            <button class="popup__button " type="submit">Сохранить</button> <img src="<%=require('./images/close_Icon.svg')%>"
                 class="popup__close" alt="закрыть">
         </form>
     </div>
@@ -52,7 +51,7 @@
                 placeholder="Ссылка на картинку" required>
             <span id="input-link-error" class="error"></span>
             <button class="popup__button popup__button_disabled" id="button_create" type="submit">Создать</button>
-            <img src="./images/close_Icon.svg" class="popup__close" id="place_close" alt="закрыть">
+            <img src="<%=require('./images/close_Icon.svg')%>" class="popup__close" id="place_close" alt="закрыть">
         </form>
     </div>
     <div class="popup popup_type_img">
@@ -61,19 +60,19 @@
             <img
                 src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="popup__image"
                 alt="закрыть">
-            <h2 class="popup__photo-name"></h2> <img src="./images/close_Icon.svg" class="popup__close" id="img_close"
+            <h2 class="popup__photo-name"></h2> <img src="<%=require('./images/close_Icon.svg')%>" class="popup__close" id="img_close"
                 alt="закрыть">
         </form>
     </div>
     <template class="template">
         <li class="card"> 
             <img src="./images/elbrus.jpg" class="card__image" alt="эльбрус">
-            <div class="card__title"> <span class="card__text"></span> <img src="./images/like.svg" class="card__like"
+            <div class="card__title"> <span class="card__text"></span> <img src="<%=require('./images/like.svg')%>" class="card__like"
                     alt="лайк"> </div>
             <button class="card__delete" type="button"></button>
         </li>
     </template>
-    <script src="./scripts/pages/index.js" type="module"></script>
+    <script src="./pages/index.js" type="module"></script>
 </body>
 
 </html>
