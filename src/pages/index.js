@@ -9,22 +9,16 @@ import { UserInfo } from '../components/UserInfo.js';
 import {
 	profileButton,
     popupProfile,
-    popupplace,
     formplace,
     nameInput,
     jobInput, 
     title, 
     subTitle, 
 	listContainer,
-	popupimage,
-	popupform,
-	profileClose,
 	popupadd,
-	imgclose,
 	enableValidation,
 	imageInput,
     placeInput,
-	popupclose,
 	initialCards
 	
 
@@ -69,11 +63,11 @@ const userInfo = new UserInfo({
   };
   
   // Попапы
-  const popupWithImage = new PopupWithImage(popupimage);
-  const popupWithProfileForm = new PopupWithForm(popupProfile, () => {
+  const popupWithImage = new PopupWithImage('.popup_type_img');
+  const popupWithProfileForm = new PopupWithForm('.popup_type_profile', () => {
 	handleProfileFormSubmit;
   });
-  const popupWithPlaceForm = new PopupWithForm(popupplace, () => {
+  const popupWithPlaceForm = new PopupWithForm('.popup_type_place', () => {
 	handlePlaceFormSubmit;
   });
   
