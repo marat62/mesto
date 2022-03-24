@@ -100,8 +100,9 @@ const userInfo = new UserInfo({
   
   // Слушатели формы редактирования профиля
   profileButton.addEventListener('click', () => {
-	nameInput.value = title.textContent;
-	jobInput.value = subTitle.textContent;
+	const { name, job } = userInfo.getUserInfo() 
+	nameInput.value = name
+	jobInput.value = job
 	editProfileFormValidator.activateButton();
 	editProfileFormValidator.resetErrors();
 	popupWithProfileForm.open();
