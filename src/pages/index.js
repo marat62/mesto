@@ -26,8 +26,7 @@ import {
 
 
 
-
-const section = new Section({
+  const section = new Section({
 	items: initialCards,
 	renderer: renderCard,
   },
@@ -36,6 +35,7 @@ const section = new Section({
   
   section.renderItems();
 
+
 // Обработчик сабмита формы добавления места
 const handlePlaceFormSubmit = (data) =>   
 {section.addItem(renderCard({
@@ -43,7 +43,7 @@ const handlePlaceFormSubmit = (data) =>
     link: data.link
   }))
 	
-	
+
   
 	// addCard.renderItems();
 	addCardFormValidator.deactivateButton();
