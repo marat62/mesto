@@ -27,22 +27,25 @@ import {
 
 
 
+const section = new Section({
+	items: initialCards,
+	renderer: renderCard,
+  },
+	listContainer
+  );
+  
+  section.renderItems();
+
 // Обработчик сабмита формы добавления места
-const handlePlaceFormSubmit = () => {
-	const inputPlace = placeInput.value;
-	const inputName = imageInput.value;
+const handlePlaceFormSubmit = (data) =>   
+{section.addItem(renderCard({
+    name: data.place,
+    link: data.link
+  }))
+	
+	
   
-	const addCard = new Section({
-	  items: [{
-		name: inputPlace,
-		link: inputName
-	  }],
-	  renderer: renderCard,
-	},
-	  listContainer
-	);
-  
-	addCard.renderItems();
+	// addCard.renderItems();
 	addCardFormValidator.deactivateButton();
 	popupWithPlaceForm.close();
 	popupWithPlaceForm.removeEventListener();
@@ -64,12 +67,12 @@ const userInfo = new UserInfo({
   
   // Попапы
   const popupWithImage = new PopupWithImage('.popup_type_img');
-  const popupWithProfileForm = new PopupWithForm('.popup_type_profile', () => {
-	handleProfileFormSubmit;
-  });
-  const popupWithPlaceForm = new PopupWithForm('.popup_type_place', () => {
-	handlePlaceFormSubmit;
-  });
+  const popupWithProfileForm = new PopupWithForm('.popup_type_profile', 
+	handleProfileFormSubmit
+  );
+  const popupWithPlaceForm = new PopupWithForm('.popup_type_place',
+	handlePlaceFormSubmit
+  );
   
   // Добавление карточки
   const renderCard = (item) => {
