@@ -54,9 +54,7 @@ const handlePlaceFormSubmit = (data) => {
 
 
 	// addCard.renderItems();
-	addCardFormValidator.deactivateButton();
 	popupWithPlaceForm.close();
-	popupWithPlaceForm.removeEventListener();
 };
 
 
@@ -80,18 +78,6 @@ const popupWithProfileForm = new PopupWithForm('.popup_type_profile',
 const popupWithPlaceForm = new PopupWithForm('.popup_type_place',
 	handlePlaceFormSubmit
 );
-
-// Добавление карточки
-
-
-const cardList = new Section({
-	items: initialCards.reverse(),
-	renderer: renderCard,
-},
-	listContainer
-);
-
-cardList.renderItems();
 
 // Валидация форм
 const editProfileFormValidator = new FormValidator(enableValidation, popupProfile);
